@@ -6,7 +6,7 @@
 
 # Mixed forest model parameterization and integration into simulation platforms as a tool for decision-making processes
 
-DOI: 
+DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10216009.svg)](https://doi.org/10.5281/zenodo.10216009)
 
 ---
 
