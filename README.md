@@ -1,31 +1,35 @@
 # SIMANFOR mixed models implementation
 
-*A repository with the original data, code and results of: **Mixed forest model parameterization and integration into simulation platforms as a tool for decision-making processes***
+*A repository with the original data, code and results of the poster titled: **Mixed forest model parameterization and integration into simulation platforms as a tool for decision-making processes***
 
 ---
 
 # Mixed forest model parameterization and integration into simulation platforms as a tool for decision-making processes
 
-DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10216009.svg)](https://doi.org/10.5281/zenodo.10216009)
+:bulb: Have a look at the original poster [here](http://dx.doi.org/10.13140/RG.2.2.27865.94564).
+
+:bookmark: Poster DOI: http://dx.doi.org/10.13140/RG.2.2.27865.94564
+
+:open_file_folder: Repository DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10216009.svg)](https://doi.org/10.5281/zenodo.10216009)
 
 ---
 
-## Abstract
+## :book: Abstract
 
-Mixed forests are crucial to climate resilience in Mediterranean ecosystems and show great potential for mitigating the effects of climate change. Proper parameterization and integration of mixed-forest models into simulation platforms are needed to understand how mixed forests influence delivery of important environmental services. In this study, a climate-sensitive growth model for mixed forests was implemented on SIMANFOR, offering parameterizations for a total of 29 species mixtures. After describing this upgrade and its potential applications, a case study is presented that demonstrates mixed-model performance using data from the Spanish Fourth National Forest Inventory (SNFI4) and previously developed silviculture scenarios as starting points. The case study analyzed four different mixtures of Pinus sylvestris with Pinus nigra, Pinus pinaster, Fagus sylvatica, and Quercus pyrenaica, which were selected for their complementarity, productivity, and resource-use efficiency. All simulations were done on the SIMANFOR platform. The results show that thinned mixed stands exhibited higher quadratic mean diameter, biomass and carbon content compared to unthinned stands. The differences observed in biomass and carbon allocation among silvicultural scenarios were consistent in all mixtures. Case studies like this one show how simulations can play a crucial role in understanding the potential of different mixtures and in orientating forest management guidelines. The model implemented on SIMANFOR is ready to use on the cloud service. 
+Mixed forests are crucial to climate resilience in Mediterranean ecosystems and show great potential for mitigating the effects of climate change. Proper parameterization and integration of mixed-forest models into simulation platforms open the possibility to explore and assess alternative silvicultural paths. In this study, a climate-sensitive growth model for mixed forests was implemented on SIMANFOR, offering parameterizations for 29 species mixtures including the most frequent in Spain. After describing the model implementation process and its potential applications, a case study is presented to show the mixed-model performance, thus using data from the Spanish Fourth National Forest Inventory (SNFI4) and previously developed silviculture scenarios for Castilla and Leon region (Spain). The case study analysed four different mixtures of *Pinus sylvestris* with *Pinus nigra*, *Pinus pinaster*, *Fagus sylvatica*, and *Quercus pyrenaica*, which were selected for their complementarity, productivity, and resource-use efficiency.  The results show that thinned mixed stands exhibited higher quadratic mean diameter, biomass and carbon content compared to unthinned stands. The differences observed in biomass and carbon allocation among silvicultural scenarios were consistent in all mixtures. This case study shows how simulations can play a crucial role in understanding the potential of different silvicultural alternatives and in orientating forest management guidelines. 
 
 ---
 
-## Repository Contents
+## :file_folder: Repository Contents
 
 - :floppy_disk: **1_data**:
     
     - :sunny: climate data obtained from [WorldClim data](https://www.worldclim.org/data/index.html)
         
-    - :deciduous_tree: tree and plot data obtained from [SFNI3 and 4 data](https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/inventario-forestal-nacional/cuarto_inventario.html)
+    - :deciduous_tree: tree and plot data obtained from [SFNI4 data](https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/inventario-forestal-nacional/cuarto_inventario.html)
 
 
-- :seedling: **2_simanfor** contains inputs and outputs for all the simulations developed with [SIMANFOR](www.simanfor.es). Check out them! There are a lot of metrics unexplored in this paper :wood: :maple_leaf:
+- :seedling: **2_simanfor** contains inputs and outputs for all the simulations developed with [SIMANFOR](www.simanfor.es). Check out them! There are a lot of metrics unexplored in this work :wood: :maple_leaf:
 
 - :computer: **3_code**:
 
@@ -39,28 +43,37 @@ Mixed forests are crucial to climate resilience in Mediterranean ecosystems and 
 | `2.0_data_summary.r` | Code to create a data summary of the principal variable with the used plots | `1_data/simulation_results.RData` | `4_figures/summary_table.csv` |
 | `2.1_location_map.r` | Code to draw a map with the plot locations | `1_data/simulation_results.RData` | `IFN4_plots_map_*` |
 
-- :bar_chart: **4_figures**: graphs and figures used on the article
+- :bar_chart: **4_figures**: graphs and figures used in the article
 
-- :books: **5_bibliography**: recopilation of all the references used on the article
+- :books: **5_bibliography**: recompilation of all the references used in the article
 
 ---
 
-:link: About us:
+## :information_source: License
 
-[Aitor Vázquez Veloso](https://github.com/aitorvv): 
-[ORCID](https://orcid.org/0000-0003-0227-506X) \\
-[Researchgate](https://www.researchgate.net/profile/Aitor_Vazquez_Veloso) \\
-[LinkedIn](https://www.linkedin.com/in/aitorvazquezveloso/) \\
-[Twitter](https://twitter.com/aitorvv) \\
-[iuFOR](http://sostenible.palencia.uva.es/users/aitorvv)
+The content of this repository is under the [MIT license](./LICENSE).
 
+---
 
-[Felipe Bravo Oviedo](https://github.com/Felipe-Bravo): 
+## :link: About the authors:
+
+#### Felipe Bravo Oviedo:
+
+[![](https://github.com/Felipe-Bravo.png?size=50)](https://github.com/Felipe-Bravo) \\
 [ORCID](https://orcid.org/0000-0001-7348-6695) \\
 [Researchgate](https://www.researchgate.net/profile/Felipe-Bravo-11) \\
 [LinkedIn](https://www.linkedin.com/in/felipebravooviedo) \\
 [Twitter](https://twitter.com/fbravo_SFM) \\
-[iuFOR](http://sostenible.palencia.uva.es/users/fbravo)
+[UVa](https://portaldelaciencia.uva.es/investigadores/181874/detalle)
+
+#### Aitor Vázquez Veloso:
+
+[![](https://github.com/aitorvv.png?size=50)](https://github.com/aitorvv) \\
+[ORCID](https://orcid.org/0000-0003-0227-506X) \\
+[Researchgate](https://www.researchgate.net/profile/Aitor_Vazquez_Veloso) \\
+[LinkedIn](https://www.linkedin.com/in/aitorvazquezveloso/) \\
+[Twitter](https://twitter.com/aitorvv) \\
+[UVa](https://portaldelaciencia.uva.es/investigadores/178830/detalle)
 
 ---
 

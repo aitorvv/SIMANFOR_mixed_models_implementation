@@ -34,8 +34,14 @@ manual_cleaning_IFN4_mixtures <- function(df){
   # clean by N
   df_pnig <- df_pnig[df_pnig$N > 300, ]
   
-  ## regroup them in a cleaned df and get list of plot_id
+  # regroup them in a cleaned df 
   final_df <- rbind(df_fsyl, df_qpyr, df_pnig, df_ppin)
+
+  # clean by AGE
+  # final_df <- final_df[final_df$T < 60, ]
+  
+  # get list of plot_id
   final_plots <- final_df$Plot_ID
+  
   return(final_plots)  
 }

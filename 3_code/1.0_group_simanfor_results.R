@@ -2,7 +2,7 @@
 ####                        Group SIMANFOR results on a single df                       ####
 #                                                                                          #
 #                            Aitor Vázquez Veloso, 31/03/2022                              #
-#                              Last modification: 25/10/2023                               #
+#                              Last modification: 11/04/2024                               #
 #------------------------------------------------------------------------------------------#
 
 
@@ -23,7 +23,7 @@ library(ggplot2)
 library(tidyverse)
 
 # set directory
-general_dir <- "2_simanfor/output/"
+general_dir <- "SIMANFOR_mixed_models_implementation/2_simanfor/"
 setwd(general_dir)
 
 
@@ -64,9 +64,12 @@ for (folder in directory){
 df <- plots  
 
 #-#-#-# clean the plots to use, removing outliers
-source('1.1_clean_plots_manually.r')
+source('../../../3_code/1.1_clean_plots_manually.r')
 plot_list <- manual_cleaning_IFN4_mixtures(df)
 df <- df[df$Plot_ID %in% plot_list, ]
+
+# for this case study, just one representative plot per mixture
+# df <- df[df$Plot_ID %in% c('9_1491_A_1', '24_970_A_1', '42_841_A_1', '9_1278_A_1'), ]
 
 # function to round on ages on 5 years step
 redondeo <- function(x, base){  
@@ -340,4 +343,4 @@ stand_evolution <- ddply(new_df, c('n_scnr', 'T'), summarise,
 
 #### Save results ####
 
-save.image('../../1_data/simulation_results.RData')
+save.image('../../../1.0_data/simulation_results.RData')

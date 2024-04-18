@@ -13,12 +13,13 @@ library(viridis)
 library(dplyr)
 library(stringr)
 
-setwd('')
+setwd('SIMANFOR_mixed_models_implementation/')
 
 
 #### Load data ####
 
 # load information
+#load('1.0_data/3_final/simulation_results.RData')
 load('1_data/simulation_results.RData')
 
 # rename to simplify
@@ -26,6 +27,10 @@ df <- stand_evolution
 
 # delete growth extra period on control simulations
 df <- df[df$T <= 120, ]
+
+# delete jumps in data in Pnigra and Ppinaster mixtures
+df <- df[!(df$n_scnr == 'PsylPnig_c24' & df$T == 85), ]
+df <- df[!(df$n_scnr == 'PsylPpin_c24' & df$T == 90), ]
 
 
 #### Manage data before graph them ####
@@ -77,7 +82,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/N.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/N.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph DG among treatments ####
@@ -113,7 +118,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/DG.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/DG.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph G among treatments ####
@@ -149,7 +154,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/G.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/G.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph Ho among treatments ####
@@ -185,7 +190,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/HO.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/HO.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph V among treatments ####
@@ -221,7 +226,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/V.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/V.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph V_all among treatments ####
@@ -257,7 +262,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/V_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/V_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph WT among treatments ####
@@ -297,7 +302,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/WT.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WT.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph WT_all among treatments ####
@@ -337,7 +342,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/WT_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WT_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph W divided in parts among treatments: WR ####
@@ -377,7 +382,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/WR.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WR.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph W divided in parts among treatments: WB ####
@@ -417,7 +422,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/WB.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WB.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph W divided in parts among treatments: WSW ####
@@ -457,7 +462,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/WSW.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WSW.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph W divided in parts among treatments: WR_all ####
@@ -497,7 +502,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/WR_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WR_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph W divided in parts among treatments: WB_all ####
@@ -537,7 +542,7 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/WB_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WB_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
 
 
 #### Graph W divided in parts among treatments: WSW_all ####
@@ -577,4 +582,54 @@ graph <-
 
 # watch and save graph
 graph
-ggsave(filename = '4_figures/simulation_graphs/WSW_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WSW_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+
+
+
+#### Graph WT and C among treatments: WT_all and CARBON_all ####
+
+graph <- 
+  ggplot(df, aes(x = T, y = WT_all, 
+                 group = n_scnr, colour = n_scnr)) +  # group by scnr
+  
+  # text
+  labs(title = "Stand total biomass and carbon",  
+       subtitle = "Solid line represents total biomass and dashed line represents sequestered carbon",  # subtítulo
+       x = "Stand age (years)",  
+       y = "Biomass / Carbon (tn/ha)"
+  ) +
+  
+  # theme
+  theme_minimal() +
+  
+  # text position and size
+  theme(plot.title = element_text(size = 20, hjust = 0.5), # title  
+        plot.subtitle = element_text(size = 12, hjust = 0.5),  # subtitle
+        axis.title = element_text(size = 15),  # axis
+        strip.text = element_text(size = 15),  # facet text
+        legend.position = 'bottom',  # legend position
+        legend.title = element_text(size = 12),  # legend title
+        legend.text = element_text(size = 12)) +  # legend content
+  
+  # set colors and legend name manually
+  # scale_color_viridis('Scenario', discrete = TRUE, option = "D")+
+  # scale_fill_viridis(discrete = TRUE) +
+  scale_color_brewer('Scenarios', palette = "Dark2") +
+  
+  # plot data
+  geom_point() +  # points
+  geom_line() +  # lines
+  
+  # plot carbon data
+  geom_point(aes(y = CARBON_all), shape = 1) +  # points
+  geom_line(aes(y = CARBON_all), linetype = "dashed") +  # lines
+  
+  # one graph per mixture
+  facet_wrap(~ Mixture, scale = 'free')
+
+# watch and save graph
+graph
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WT_all_and_C_all.png', device = 'png', units = 'mm', dpi = 300, width = 300, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WT_all_and_C_all_400x300.png', device = 'png', units = 'mm', dpi = 300, width = 400, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WT_all_and_C_all_450x300.png', device = 'png', units = 'mm', dpi = 300, width = 450, height = 300)
+ggsave(filename = '2_scripts/4_figures/simulation_graphs/WT_all_and_C_all_500x300.png', device = 'png', units = 'mm', dpi = 300, width = 500, height = 300)
