@@ -9,6 +9,6 @@ authors:
   orcid: "https://orcid.org/0000-0003-0227-506X"
 title: "A repository with the original data, code and results of: *Mixed forest model parameterization and integration into simulation platforms as a tool for decision-making processes*"
 version: 1.0.2
-doi: 
+doi: https://doi.org/10.5281/zenodo.10993345
 date-released: 2024-04-18
 url: "https://github.com/aitorvv/SIMANFOR_mixed_models_implementation"
